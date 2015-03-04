@@ -19,7 +19,7 @@ tpmac_registerRecordDeviceDriver(pdbbase)
 # pmacAsynIPConfigure() is a wrapper for drvAsynIPPort::drvAsynIPPortConfigure() and
 # pmacAsynIPPort::pmacAsynIPPortConfigureEos().
 # See pmacAsynIPPort.c
-pmacAsynIPConfigure("P0","xf23id1-mc01.cs.nsls2.local:1025")
+pmacAsynIPConfigure("P0","xf23id2-mc02.cs.nsls2.local:1025")
 
 # WARNING: a trace-mask of containing 0x10 will TRACE_FLOW (v. noisy!!)
 #asynSetTraceMask("P0",-1,0x9)
@@ -68,7 +68,8 @@ pmacCreateAxis("motor", 4)
 #pmacSetCoordIdlePollPeriod(5,2000)
 
 ## Configure Piezo controller(s)
-drvAsynIPPortConfigure("PI","xf23ida-tsrv03.cs.nsls2.local:4001",0,0,0)
+#drvAsynIPPortConfigure("PI1","xf23ida-tsrv04.cs.nsls2.local:4001",0,0,0)
+#drvAsynIPPortConfigure("PI2","xf23ida-tsrv05.cs.nsls2.local:4001",0,0,0)
 
 ## Load record instances
 dbLoadTemplate("db/motor.substitutions")
@@ -78,19 +79,19 @@ dbLoadTemplate("db/optics_change.substitutions")
 dbLoadTemplate("db/motor_homing.substitutions")
 dbLoadTemplate("db/motor_status.substitutions")
 dbLoadTemplate("db/interp.substitutions")
-dbLoadRecords("db/undulator.db")
-#dbLoadRecords("$(EPICS_BASE)/db/pmacStatus.db", "SYS=XF:23ID1-CT,PMAC=MC:01,VERSION=1,PORT=P0,NAXES=4")
-dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID1-CT,DEV={MC:01-Ax:1},AXIS=1,PORT=P0")
-dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID1-CT,DEV={MC:01-Ax:2},AXIS=2,PORT=P0")
-dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID1-CT,DEV={MC:01-Ax:3},AXIS=3,PORT=P0")
-dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID1-CT,DEV={MC:01-Ax:4},AXIS=4,PORT=P0")
+#dbLoadRecords("db/undulator.db")
+#dbLoadRecords("$(EPICS_BASE)/db/pmacStatus.db", "SYS=XF:23ID2-CT,PMAC=MC:02,VERSION=1,PORT=P0,NAXES=4")
+dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID2-CT,DEV={MC:02-Ax:1},AXIS=1,PORT=P0")
+dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID2-CT,DEV={MC:02-Ax:2},AXIS=2,PORT=P0")
+dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID2-CT,DEV={MC:02-Ax:3},AXIS=3,PORT=P0")
+dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID2-CT,DEV={MC:02-Ax:4},AXIS=4,PORT=P0")
 
-dbLoadRecords("db/asynComm.db","P=XF:23ID1-CT{MC:01},PORT=P0,ADDR=0")
+dbLoadRecords("db/asynComm.db","P=XF:23ID2-CT{MC:02},PORT=P0,ADDR=0")
 
-dbLoadRecords("$(EPICS_BASE)/db/iocAdminSoft.db", "IOC=XF:23ID1-CT{IOC:MC01}")
+dbLoadRecords("$(EPICS_BASE)/db/iocAdminSoft.db", "IOC=XF:23ID2-CT{IOC:MC02}")
 
-dbLoadTemplate("db/fb_epid.substitutions")
-dbLoadTemplate("db/PI_E625.substitutions")
+#dbLoadTemplate("db/fb_epid.substitutions")
+#dbLoadTemplate("db/PI_E625.substitutions")
 
 ## autosave/restore machinery
 save_restoreSet_Debug(0)
@@ -114,4 +115,4 @@ makeAutosaveFiles()
 create_monitor_set("info_positions.req", 5 , "")
 create_monitor_set("info_settings.req", 15 , "")
 
-dbl > "/cf-update/xf23id1-ioc1.mc01.dbl"
+dbl > "/cf-update/xf23id2-ioc1.mc02.dbl"
