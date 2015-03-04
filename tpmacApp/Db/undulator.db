@@ -9,7 +9,7 @@ record(calc, "XF:23ID-ID{EPU:2}Sts:Move-Sts"){
   field(INPH, "SR:C23-ID:G1A{EPU:2-Ax:BI}Sw:AmpEn-Sts CP")
   field(INPI, "SR:C23-ID:G1A{EPU:2-Ax:Gap}-Mtr.MOVN CP")
   field(CALC, "(A+B+C+D+E+F+G+H+I) > 0")
-  field(FLNK, "XF:23ID1-OP{Mono}Sts:Move-Sts_")
+  field(FLNK, "XF:23ID2-OP{Mono}Sts:Move-Sts_")
 }
 record(calc, "XF:23ID-ID{EPU:1}Sts:Move-Sts"){
   field(INPA, "SR:C23-ID:G1A{EPU:1-Ax:TU}Sw:AmpEn-Sts CP")
@@ -22,5 +22,5 @@ record(calc, "XF:23ID-ID{EPU:1}Sts:Move-Sts"){
   field(INPH, "SR:C23-ID:G1A{EPU:1-Ax:BI}Sw:AmpEn-Sts CP")
   field(INPI, "SR:C23-ID:G1A{EPU:1-Ax:Gap}-Mtr.MOVN CP")
   field(CALC, "(A+B+C+D+E+F+G+H+I) > 0")
-  field(FLNK, "XF:23ID1-OP{Mono}Sts:Move-Sts_")
+  field(FLNK, "XF:23ID2-OP{Mono}Sts:Move-Sts_")
 }
