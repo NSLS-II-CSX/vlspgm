@@ -6,3 +6,4 @@ as
 bin
 O.*
 envPaths
+*.req
