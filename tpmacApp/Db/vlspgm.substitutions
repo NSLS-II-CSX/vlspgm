@@ -1,8 +1,12 @@
 file "db/vlspgm.template" {
-    pattern {   Sys,    Dev,    GDev, MDev, GMDev, CSys,        CDev,   MXDev, GXDev, E_LOW,    E_HIGH, ASYNPORT,       SCAN, GDev1, GDev2, GDev3, GDev4, GDev5, GDev6, GDev7, GDev8, GDev9, GDev10}
-        {       "XF:23ID1-OP","{Mono}", "{Mono-Grt}", "{Mono-Ax:MirP}","{Mono-Ax:GrtP}", "XF:23ID1-CT", "{MC:02}", "{Mono-Ax:MirX}","{Mono-Ax:GrtX}", 200 ,     2000,   P0,          ".2 second", 
+    pattern {   Sys,    Dev,    GDev, MDev, GMDev, CSys, CDev,   MXDev, GXDev, E_LOW, E_HIGH, ASYNPORT, SCAN, GDev1, GDev2, GDev3, GDev4, GDev5, GDev6, GDev7, GDev8, GDev9, GDev10, 
+	          EPU1G , EPU1P , EPU2G , EPU2P }
+        {   "XF:23ID1-OP","{Mono}", "{Mono-Grt}", "{Mono-Ax:MirP}","{Mono-Ax:GrtP}", "XF:23ID1-CT", 
+		    "{MC:02}", "{Mono-Ax:MirX}","{Mono-Ax:GrtX}", 200 ,     2000,   P0,          ".2 second", 
             "{Mono-Grt:01}", "{Mono-Grt:02}", "{Mono-Grt:03}", "{Mono-Grt:04}", "{Mono-Grt:05}", "{Mono-Grt:06}", 
             "{Mono-Grt:07}", "{Mono-Grt:08}", "{Mono-Grt:09}", "{Mono-Grt:10}" 
+			"SR:C23-ID:G1A{EPU:1-Ax:Gap}-Mtr.DMOV CP NMS", "SR:C23-ID:G1A{EPU:2-Ax:Gap}-Mtr.DMOV",
+			"SR:C23-ID:G1A{EPU:1-Ax:Phase}-Mtr.DMOV CP NMS", "SR:C23-ID:G1A{EPU:2-Ax:Phase}-Mtr.DMOV"
         }
 }
 

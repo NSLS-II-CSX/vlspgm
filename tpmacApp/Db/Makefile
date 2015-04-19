@@ -24,7 +24,6 @@ DB += optics_change.template
 DB += optics_change.substitutions
 DB += vlspgm.template
 DB += vlspgm.substitutions
-DB += undulator.db
 DB += selector.template
 DB += tables.template
 DB += interp.substitutions

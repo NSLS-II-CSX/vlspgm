@@ -245,9 +245,11 @@ record(bi, "$(Sys)$(Dev)Sts:Move-Sts"){
 
 record(calc, "$(Sys)$(Dev)Sts:Move-Sts_"){
   field(INPA, "$(Sys)$(Dev)Sts:Scan-Sts")
-  field(INPB, "XF:23ID-ID{EPU:1}Sts:Move-Sts")
-  field(INPC, "XF:23ID-ID{EPU:2}Sts:Move-Sts")
-  field(CALC, "(A > 0) || B || C")
+  field(INPB, "$(EPU1G)")
+  field(INPC, "$(EPU1P)")
+  field(INPD, "$(EPU2G)")
+  field(INPE, "$(EPU2P)")
+  field(CALC, "(A > 0) || (B == 0) || (C == 0) || (D == 0) || (E == 0)")
   field(FLNK, "$(Sys)$(Dev)Sts:Move-Sts")
 }
 
