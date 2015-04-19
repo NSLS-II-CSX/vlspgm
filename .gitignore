@@ -4,3 +4,6 @@ db
 dbd
 as
 bin
+O.*
+envPaths
+*.req
