@@ -1,0 +1,25 @@
+
+ExtraInput = Ignore;
+ReadTimeout = 500;
+OutTerminator = "";
+InTerminator = ACK;
+Separator = CR;
+
+
+killMotor
+{
+  out "#\$1k" CR;
+  in;
+}
+
+openLoopMotor
+{
+  out "#\$1O0" CR;
+  in;
+}
+
+enableMotor
+{
+	out "#\$1J/" CR;
+	in;
+}

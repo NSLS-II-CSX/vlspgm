@@ -58,6 +58,15 @@ record(ai, "$(Sys)$(Dev)Enrgy-I") {
   field(SCAN, "$(SCAN)")
 }
 
+record(ai, "$(Sys)$(Dev)Enrgy:Smoo-I"){
+  field(INP,  "$(Sys)$(Dev)Enrgy-I")
+  field(DESC, "Calculated Photon Energy")
+  field(PREC, "3")
+  field(EGU, "eV")
+  info(autosaveFields, "SMOO")
+  field(SCAN, "$(SCAN)")
+}
+
 ## Energy calculation mode (VLS or Fixed Focus)
 
 record(calc, "$(Sys)$(Dev)Mode:Calc-Calc_"){

@@ -1,0 +1,19 @@
+file "db/pmac_asyn_motor.db"
+{
+  pattern
+  { SYS,              DEV,                 MOTOR,  SPORT,  ADDR,  DESC,        DTYP        PREC,  EGU }
+  { "XF:23ID1-OP", "{Mono-Ax:MirP}", "motor", "P0", 1, "Mirror Pitch", asynMotor, 6, "deg" }
+  { "XF:23ID1-OP", "{Mono-Ax:GrtP}", "motor", "P0", 2, "Grating Pitch", asynMotor, 6, "deg" }
+  { "XF:23ID1-OP", "{Mono-Ax:MirX}", "motor", "P0", 3, "Mirror Translation", asynMotor, 4, "mm" }
+  { "XF:23ID1-OP", "{Mono-Ax:GrtX}", "motor", "P0", 4, "Grating Translation", asynMotor, 4, "mm" }
+}
+
+file "db/pmac_asyn_motor_sbw.db"
+{
+  pattern
+  { SYS,              DEV,                 MOTOR,  SPORT,  ADDR,  DESC,        DTYP        PREC,  EGU }
+  { "XF:23ID1-OP", "{Mono-Ax:MirP}", "motor", "P0", 1, "Mirror Pitch", asynMotor, 6, "deg" }
+  { "XF:23ID1-OP", "{Mono-Ax:GrtP}", "motor", "P0", 2, "Grating Pitch", asynMotor, 6, "deg" }
+  { "XF:23ID1-OP", "{Mono-Ax:MirX}", "motor", "P0", 3, "Mirror Translation", asynMotor, 4, "mm" }
+  { "XF:23ID1-OP", "{Mono-Ax:GrtX}", "motor", "P0", 4, "Grating Translation", asynMotor, 4, "mm" }
+}

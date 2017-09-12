@@ -78,8 +78,9 @@ dbLoadTemplate("db/optics_change.substitutions")
 dbLoadTemplate("db/motor_homing.substitutions")
 dbLoadTemplate("db/motor_status.substitutions")
 dbLoadTemplate("db/interp.substitutions")
+dbLoadTemplate("db/pmac_asyn_motor.substitutions")
 dbLoadRecords("db/undulator.db")
-#dbLoadRecords("$(EPICS_BASE)/db/pmacStatus.db", "SYS=XF:23ID1-CT,PMAC=MC:01,VERSION=1,PORT=P0,NAXES=4")
+dbLoadRecords("$(EPICS_BASE)/db/pmacStatus.db", "SYS=XF:23ID1-CT,PMAC=MC:01,VERSION=1,PORT=P0,NAXES=4")
 dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID1-CT,DEV={MC:01-Ax:1},AXIS=1,PORT=P0")
 dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID1-CT,DEV={MC:01-Ax:2},AXIS=2,PORT=P0")
 dbLoadRecords("$(EPICS_BASE)/db/pmacStatusAxis.db", "SYS=XF:23ID1-CT,DEV={MC:01-Ax:3},AXIS=3,PORT=P0")
@@ -104,6 +105,7 @@ set_pass0_restoreFile("info_positions.sav")
 set_pass0_restoreFile("info_settings.sav")
 set_pass1_restoreFile("info_settings.sav")
 
+asSetSubstitutions("WS=csxws1")
 asSetFilename("/epics/xf/23id/xf23id.acf")
 iocInit()
 caPutLogInit("xf23id-ca:7004", 0)
@@ -115,3 +117,6 @@ create_monitor_set("info_positions.req", 5 , "")
 create_monitor_set("info_settings.req", 15 , "")
 
 dbl > "/cf-update/xf23id1-ioc1.mc01.dbl"
+
+dbpf XF:23ID1-CT{MC:01}Asyn.AOUT CLRF
+

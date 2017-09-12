@@ -31,6 +31,16 @@ DB += fb_epid.substitutions
 DB += fb_epid.db
 DB += PI_E625.template
 DB += PI_E625.substitutions
+DB += pmac_asyn_motor.substitutions
+DB += pmac_asyn_motor_sbw.db
+
+DB_INSTALLS += $(EPICS_BASE)/db/pmac_asyn_motor.db
+DB_INSTALLS += $(EPICS_BASE)/db/motorstatus.db
+DB_INSTALLS += $(EPICS_BASE)/db/pmacStatusAxis.db
+DB_INSTALLS += $(EPICS_BASE)/db/pmacStatus.db
+DB_INSTALLS += $(EPICS_BASE)/db/autohome.db
+DB_INSTALLS += $(EPICS_BASE)/db/iocAdminSoft.db
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>

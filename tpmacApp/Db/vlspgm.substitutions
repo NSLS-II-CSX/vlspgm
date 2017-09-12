@@ -5,8 +5,8 @@ file "db/vlspgm.template" {
 		    "{MC:02}", "{Mono-Ax:MirX}","{Mono-Ax:GrtX}", 200 ,     2000,   P0,          ".2 second", 
             "{Mono-Grt:01}", "{Mono-Grt:02}", "{Mono-Grt:03}", "{Mono-Grt:04}", "{Mono-Grt:05}", "{Mono-Grt:06}", 
             "{Mono-Grt:07}", "{Mono-Grt:08}", "{Mono-Grt:09}", "{Mono-Grt:10}" 
-			"SR:C23-ID:G1A{EPU:1-Ax:Gap}-Mtr.DMOV CP NMS", "SR:C23-ID:G1A{EPU:2-Ax:Gap}-Mtr.DMOV",
-			"SR:C23-ID:G1A{EPU:1-Ax:Phase}-Mtr.DMOV CP NMS", "SR:C23-ID:G1A{EPU:2-Ax:Phase}-Mtr.DMOV"
+			"SR:C23-ID:G1A{EPU:2-Ax:Gap}-Mtr.DMOV CP NMS", "SR:C23-ID:G1A{EPU:2-Ax:Gap}-Mtr.DMOV",
+			"SR:C23-ID:G1A{EPU:2-Ax:Phase}-Mtr.DMOV CP NMS", "SR:C23-ID:G1A{EPU:2-Ax:Phase}-Mtr.DMOV"
         }
 }
 
